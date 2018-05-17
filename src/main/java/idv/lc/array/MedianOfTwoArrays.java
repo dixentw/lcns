@@ -43,4 +43,35 @@ class MedianOfTwoArrays{
             }
         }
     }
+    // this version , pass new sub array to next call, probabily simpler, take much more space
+    public int helper2(int[] n, int[] m, int k) {
+        // terminate condition
+        if(n.length==0 ) return m[k];
+        if(m.length==0 ) return n[k];
+        //if(k == 0) return Math.min(n[0], m[0]);
+        // main part
+        int mid1 = (n.length-1) / 2;
+        int mid2 = (m.length-1) / 2;
+        if (mid1 + mid2 < k) {
+            if(n[mid1] > m[mid2]) {
+                System.out.println("a");
+                int[] sub = Arrays.copyOfRange(m, mid2+1, m.length);
+                return helper2(n, sub, k-(mid2+1));
+            } else {
+                System.out.println("b");
+                int[] sub = Arrays.copyOfRange(n, mid1+1, n.length);
+                return helper2(sub, m, k-(mid1+1));
+            }
+        } else {
+            if(n[mid1] > m[mid2]) {
+                System.out.println("c");
+                int[] sub = Arrays.copyOfRange(n, 0, mid1);
+                return helper2(sub, m, k);
+            } else {
+                System.out.println("d");
+                int[] sub = Arrays.copyOfRange(m, 0, mid2);
+                return helper2(n, sub, k);
+            }
+        }
+    }
 }
