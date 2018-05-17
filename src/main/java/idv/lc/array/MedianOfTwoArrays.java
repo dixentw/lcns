@@ -12,7 +12,7 @@ class MedianOfTwoArrays{
             int l = helper(nums1, 0, e1, nums2, 0, e2, (totalLen)/2-1);
             return (l+r) / 2.0;
         } else {
-            return helper(nums1, 0, e1, nums2, 0, e2, (totalLen)/2-1) / 1.0;
+            return helper(nums1, 0, e1, nums2, 0, e2, (totalLen)/2) / 1.0;
         }
     }
     // find k th elemnet in two sorted array (k from 0)
