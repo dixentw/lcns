@@ -18,7 +18,7 @@ class MedianOfTwoArrays{
     // find k th elemnet in two sorted array (k from 0)
     public int helper(int[] n, int s1, int e1, int[] m, int s2, int e2, int k) {
         // terminate condition
-        System.out.printf(">>>>> %d, %d, %d, %d, %d\n", s1, e1, s2, e2, k);
+        //System.out.printf(">>>>> %d, %d, %d, %d, %d\n", s1, e1, s2, e2, k);
         if(s1 > e1) return m[k+s2];
         if(s2 > e2) return n[k+s1];
         if(k == 0) return Math.min(n[s1], m[s2]);
@@ -27,18 +27,18 @@ class MedianOfTwoArrays{
         int mid2 = (e2 - s2) / 2;
         if (mid1 + mid2 < k) { //取不夠, 要往s1 or s2 = mid1 or mid2 方向取
             if(n[s1+mid1] > m[s2+mid2]) {
-                System.out.println("a");
+                //System.out.println("a");
                 return helper(n, s1, e1, m, s2+mid2+1, e2, k-(mid2+1));
             } else {
-                System.out.println("b");
+                //System.out.println("b");
                 return helper(n, s1+mid1+1, e1, m, s2, e2, k-(mid1+1));
             }
         } else {
             if(n[s1+mid1] > m[s2+mid2]) {
-                System.out.println("c");
+                // System.out.println("c");
                 return helper(n, s1, s1+mid1-1, m, s2, e2, k);
             } else {
-                System.out.println("d");
+                // System.out.println("d");
                 return helper(n, s1, e1, m, s2,s2+mid2-1, k);
             }
         }
@@ -54,21 +54,21 @@ class MedianOfTwoArrays{
         int mid2 = (m.length-1) / 2;
         if (mid1 + mid2 < k) {
             if(n[mid1] > m[mid2]) {
-                System.out.println("a");
+                // System.out.println("a");
                 int[] sub = Arrays.copyOfRange(m, mid2+1, m.length);
                 return helper2(n, sub, k-(mid2+1));
             } else {
-                System.out.println("b");
+                // System.out.println("b");
                 int[] sub = Arrays.copyOfRange(n, mid1+1, n.length);
                 return helper2(sub, m, k-(mid1+1));
             }
         } else {
             if(n[mid1] > m[mid2]) {
-                System.out.println("c");
+                // System.out.println("c");
                 int[] sub = Arrays.copyOfRange(n, 0, mid1);
                 return helper2(sub, m, k);
             } else {
-                System.out.println("d");
+                // System.out.println("d");
                 int[] sub = Arrays.copyOfRange(m, 0, mid2);
                 return helper2(n, sub, k);
             }
