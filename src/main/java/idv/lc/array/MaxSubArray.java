@@ -13,7 +13,6 @@ class MaxSubArray {
                 max = DP[i];
             }
         }
-        System.out.println(Arrays.toString(DP));
         return max;
     }
 }

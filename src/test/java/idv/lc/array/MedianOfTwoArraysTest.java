@@ -40,7 +40,6 @@ public class MedianOfTwoArraysTest{
     }
     @Test
     public void test3(){
-        System.out.println("--------------");
         int[] num1 = new int[]{3};
         int[] num2 = new int[]{1,2,4};
         assertEquals(1, s.helper2(num1, num2, 0));
@@ -50,7 +49,6 @@ public class MedianOfTwoArraysTest{
     }
     @Test
     public void test4(){
-        System.out.println("--------------");
         int[] num1 = new int[]{4, 6};
         int[] num2 = new int[]{1,2,3,5,7,8};
         assertEquals(1, s.helper2(num1, num2, 0));
