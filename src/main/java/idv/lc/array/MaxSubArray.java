@@ -4,11 +4,11 @@ import java.util.*;
 
 class MaxSubArray {
     public int maxSubArray(int[] nums) {
-        int[] DP = new int[nums.length+1];
-        DP[0] = 0;
-        int max = Integer.MIN_VALUE;
-        for(int i=1;i < DP.length; i++){
-            DP[i] = Math.max(DP[i-1] + nums[i-1], nums[i-1]);
+        int[] DP = new int[nums.length];
+        DP[0] = nums[0];
+        int max = nums[0];
+        for(int i=1;i < nums.length; i++){
+            DP[i] = Math.max(DP[i-1] + nums[i], nums[i]);
             if(DP[i] > max) {
                 max = DP[i];
             }
