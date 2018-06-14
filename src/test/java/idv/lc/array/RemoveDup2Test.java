@@ -11,11 +11,9 @@ public class RemoveDup2Test {
         int[] arr = new int[]{1,1,1,2,2,3};
         int res = s.removeDuplicates(arr);
         assertEquals(5, res);
-        System.out.println(Arrays.toString(arr));
         arr = new int[]{0,0,1,1,1,1,2,3,3};
         res = s.removeDuplicates(arr);
         assertEquals(7, res);
-        System.out.println(Arrays.toString(arr));
 
     }
 }
