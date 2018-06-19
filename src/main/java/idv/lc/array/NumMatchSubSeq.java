@@ -3,6 +3,7 @@ package idv.lc.array;
 import java.util.*;
 
 class NumMatchSubSeq {
+    /*
     public int numMatchingSubseq(String S, String[] words) {
         Map<Character, List<String>> table = new HashMap<>();
         for(String w : words) {
@@ -41,9 +42,8 @@ class NumMatchSubSeq {
             }
         }
         return table.get(' ').size();
-
-    }
-    public int numMatchingSubseq1(String S, String[] words) {
+    }*/
+    public int numMatchingSubseq(String S, String[] words) {
         Map<Character, List<Integer>> table = new HashMap<>();
         for(int i=0; i<S.length(); i++){
             List<Integer> l = table.get(S.charAt(i));
