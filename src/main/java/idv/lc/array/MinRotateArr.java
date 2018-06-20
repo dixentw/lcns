@@ -12,12 +12,20 @@ class MinRotateArr {
         // 如果是start+end/2 算出來的mid, 在終端條件的時候，都會等於start, 所以最後都會以start+1當作前進的動力。
         while(start < end) {
             int mid = (start + end) / 2;
-            if(nums[mid] < nums[start] && nums[start] > nums[end]) {
-                end = mid;
+            if(nums[start] < nums[mid]) {
+                if(nums[start] > nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid;
+                }
             } else {
-                start = mid + 1;
+                if(start == mid && nums[start] > nums[end]) {
+                    start = mid + 1;
+                }else{
+                    end = mid;
+                }
             }
         }
-        return nums[mid];
+        return nums[start];
     }
 }
