@@ -1,0 +1,12 @@
+package idv.lc.PKG_HOLDER;
+
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.util.*;
+
+public class CLASS_HOLDERTest {
+    CLASS_HOLDER s = new CLASS_HOLDER();
+    @Test
+    public void test1(){
+    }
+}
