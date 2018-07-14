@@ -7,17 +7,16 @@ class LCIS {
         if(nums.length==0){
             return 0;
         }
-        int maxLen = Integer.MIN_VALUE;
+        int maxLen = 1; // don't need to set integer min, cause mininal is 1
         int tmpLen = 1;
         for(int i=0; i<nums.length-1; i++){
             if(nums[i] < nums[i+1]){
                 tmpLen++;
             }else{
-                maxLen = Math.max(maxLen, tmpLen);
                 tmpLen = 1;
             }
+            maxLen = Math.max(maxLen, tmpLen); //compare max everytime, so that we don't need separated line again outside of loop
         }
-        maxLen = Math.max(maxLen, tmpLen);
         return maxLen;
     }
 }
