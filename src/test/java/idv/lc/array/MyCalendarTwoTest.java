@@ -16,7 +16,7 @@ public class MyCalendarTwoTest {
         assertTrue(s.book(25, 55)); // returns true
     }
     @Test
-    public void test1(){
+    public void test2(){
         MyCalendarTwo s = new MyCalendarTwo();
         assertTrue(s.book(10, 20)); // returns true
         assertTrue(s.book(50, 60)); // returns true
