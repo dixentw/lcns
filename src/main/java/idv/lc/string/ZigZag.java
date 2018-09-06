@@ -4,6 +4,9 @@ import java.util.*;
 
 public class ZigZag {
     public String convert(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
         char[] cc = s.toCharArray();
         StringBuffer sb = new StringBuffer();
         int i=0;
