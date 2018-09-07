@@ -6,24 +6,33 @@ public class LetterCombi {
     String[] map = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
     public List<String> letterCombinations(String digits) {
-        List<String> result = new ArrayList();
-        if(digits == null || digits.length()==0)
-            return result;
-        helper(result,digits, new StringBuilder(),0);
-        return result;
+        List<String> res = new ArrayList<>();
+        if (digits.length() == 0) return res;
+        helper(res, new StringBuilder(), digits, 0);
+        return res;
     }
-    private void helper(List<String> result, String digits, StringBuilder runStr, int idx){
-        if(idx == digits.length()){
-            result.add(runStr.toString());
+    // smaller memory footprint
+    public void helper(List<String> res, StringBuilder path, String digits, int index) {
+        if (index == digits.length()) {
+            res.add(path.toString());
             return;
         }
-        char[] chars = map[digits.charAt(idx)-'0'].toCharArray();
-        for(char c : chars){
-            helper(result,digits, runStr.append(c),idx+1);
-            runStr.deleteCharAt(runStr.length()-1);
+        String mapping = map[digits.charAt(index) - '0'];
+        for (int i=0; i<mapping.length(); i++) {
+            helper(res, path.append(mapping.charAt(i)), digits, index+1);
+            path.deleteCharAt(path.length()-1);
         }
     }
-
+    public void helper0(List<String> res, String path, String digits, int index) {
+        if (index == digits.length()) {
+            res.add(path);
+            return;
+        }
+        String mapping = map[digits.charAt(index) - '0'];
+        for (int i=0; i<mapping.length(); i++) {
+            helper(res, path+String.valueOf(mapping.charAt(i)), digits, index+1);
+        }
+    }
     public List<String> letterCombinations1(String digits) {
         if (digits.length() ==  0) {
             return new ArrayList<String>();
