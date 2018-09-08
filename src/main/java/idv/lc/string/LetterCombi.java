@@ -30,7 +30,7 @@ public class LetterCombi {
         }
         String mapping = map[digits.charAt(index) - '0'];
         for (int i=0; i<mapping.length(); i++) {
-            helper(res, path+String.valueOf(mapping.charAt(i)), digits, index+1);
+            helper0(res, path+String.valueOf(mapping.charAt(i)), digits, index+1);
         }
     }
     public List<String> letterCombinations1(String digits) {
