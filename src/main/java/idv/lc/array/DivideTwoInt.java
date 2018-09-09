@@ -3,7 +3,28 @@ package idv.lc.array;
 import java.util.*;
 
 class DivideTwoInt {
-    public int divide(int dividend, int divisor) {
+    public int divide (int dividend, int divisor) {
+        int sign = 1;
+        if ((dividend < 0 && divisor > 0 )||(dividend > 0 && divisor < 0)) sign = -1;
+        long dd = dividend;
+        long ds = divisor;
+        dd = Math.abs(dd);
+        ds = Math.abs(ds);
+        long result = 0;
+        if (ds == 1) {
+            result = dd;
+        } else {
+            while (dd >= ds) {
+                result++;
+                dd -= ds;
+            }
+        }
+        if (sign * result > Integer.MAX_VALUE ||sign * result < Integer.MIN_VALUE ) {
+            return Integer.MAX_VALUE;
+        }
+        return sign * (int)result;
+    }
+    public int divide0(int dividend, int divisor) {
         int cnt = 0;
         boolean shouldNeg = false;
         long dd = dividend;
