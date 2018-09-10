@@ -19,7 +19,6 @@ public class ValidPalindrome {
                 continue;
             }
             if (sc!=se) {
-                System.out.printf("b: %s, e: %s\n", sc, se);
                 return false;
             }
             start++;
