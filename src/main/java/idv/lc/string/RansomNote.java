@@ -10,7 +10,6 @@ public class RansomNote {
         }
         for (int i=0; i<ransomNote.length(); i++) {
             mag[ransomNote.charAt(i)-'a']--;
-            System.out.println(Arrays.toString(mag));
             if (mag[ransomNote.charAt(i)-'a'] < 0) {
                 return false;
             }
