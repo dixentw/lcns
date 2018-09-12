@@ -11,7 +11,6 @@ public class ReverseVowel {
         while(start < end) {
             while(!vowels.contains(sc[start]) && start<end) start++;
             while(!vowels.contains(sc[end]) && start<end) end--;
-            System.out.printf("start %d, end %d\n", start, end);
             char tmp = sc[start];
             sc[start] = sc[end];
             sc[end] = tmp;
