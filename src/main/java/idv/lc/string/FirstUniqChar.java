@@ -16,6 +16,19 @@ public class FirstUniqChar {
         for (int i=0; i<s.length(); i++) {
             cs[s.charAt(i)-'a']++;
         }
+        for (int i=0; i<s.length(); i++) {
+            if (cs[s.charAt(i)-'a'] == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int firstUniqCharOLD(String s) {
+        int[] cs = new int[26];
+        for (int i=0; i<s.length(); i++) {
+            cs[s.charAt(i)-'a']++;
+        }
         int first = Integer.MAX_VALUE;
         for (int i=0; i<cs.length; i++) {
             if (cs[i] == 1 && s.indexOf((char)(i+'a')) < first) { // [FAIL] `i+'0'`
