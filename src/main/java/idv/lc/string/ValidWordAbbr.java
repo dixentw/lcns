@@ -12,21 +12,24 @@ public class ValidWordAbbr {
      */
     public boolean validWordAbbreviation(String word, String abbr) {
         int num = 0;
-        int index = -1;
+        int index = 0;
         for (int i=0; i<abbr.length(); i++) {
             if (Character.isDigit(abbr.charAt(i))) {
-                num = num*10 + s.charAt(i) - '0';
+                if (abbr.charAt(i) == '0' && num==0) return false;// "a", "01", ["abbreviation", "a10n"] 必須要leading zero
+                num = num*10 + abbr.charAt(i) - '0';
             } else { // character case
-                index = num + 1;
-                num = 0;
+                index += num;
+                if (index >= word.length()) return false; // "hi", "2i"
                 if (word.charAt(index) != abbr.charAt(i)) {
                     return false;
                 }
+                index++;
+                num = 0;
             }
         }
         // remaining case
         if (num != 0) {
-
+            return index+num == word.length();
         }
         return true;
     }
