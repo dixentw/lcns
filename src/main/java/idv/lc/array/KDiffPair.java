@@ -3,6 +3,9 @@ package idv.lc.array;
 import java.util.*;
 
 class KDiffPair {
+    /*
+     * sort the array, find the k diff and return result
+     */
     public int findPairs(int[] nums, int k) {
         Arrays.sort(nums);
         int p = 0;
