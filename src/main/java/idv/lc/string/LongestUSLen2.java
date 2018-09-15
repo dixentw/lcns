@@ -11,11 +11,43 @@ public class LongestUSLen2 {
      *
      * 思路如下：找最長，而且不重複的丟出去，所以如果最長的是重複的，那就要往不那麼長的找，但是這時候就要避開，不那麼長的string 是長的subsequence
      *
-     * Seconds,可以使用hashMap, 記下duplication
+     * Seconds,可以使用hashMap, 記下duplication, 然後再回過頭去，如果是別人的subsequence, 就標成false
      *
      */
 
     public int findLUSlength(String[] strs) {
+        Map<String, Boolean> map = new HashMap<>();
+        for (String ss : strs) {
+            if (map.containsKey(ss)) {
+                map.put(ss, false);
+            } else {
+                map.put(ss, true);
+            }
+        }
+        //只看出現一次的string，是不是別人的subsequence
+        for (Map.Entry<String, Boolean> e : map.entrySet()) {
+            if (e.getValue()) {
+                for (Map.Entry<String, Boolean> inner : map.entrySet()) {
+                    //System.out.printf("e: %s, in: %s\n", e.getKey(), inner.getKey());
+                    //會找到自己，所以限定是false才檢查
+                    //有點不靠譜，我怎麼知道e.getKey是不是另外一個不重複的e.getKey subsequence?
+                    //或者說，只match false也可以，因為如果你是別人的subSeq, 你一定小於那個seq，所以我們只要檢查是不是在dup就好了
+                    //But String len? 這沒排序啊？isSubSeq是假設前面string 長度大於後面string的欸
+                    if (!inner.getValue() && isSubSeq(inner.getKey(), e.getKey())) {
+                        e.setValue(false);
+                        break;
+                    }
+                }
+            }
+        }
+        int max = -1;
+        for (Map.Entry<String, Boolean> entry : map.entrySet())
+            if (entry.getValue()) max = Math.max (max, entry.getKey().length());
+        return max;
+
+    }
+
+    public int findLUSlengthOLD(String[] strs) {
         Arrays.sort(strs, new Comparator<String>(){
             public int compare(String o1, String o2) {
                 return o2.length() - o1.length();
