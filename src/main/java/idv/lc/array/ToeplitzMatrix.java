@@ -5,7 +5,23 @@ import java.util.*;
 class ToeplitzMatrix {
     // 其實可以不用考慮開頭，因為不管在哪邊開，都要符合i+1, j+1都依樣才行
     // 更簡潔的是，對matrix所有的元素而言，只要i+1, j+1不等於自己，就是false
+    //
     public boolean isToeplitzMatrix(int[][] matrix) {
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                int val = matrix[i][j];
+                //[FAIL]這邊直接把i, j給放迴圈，所以跑到外面兩層的時候就GG了
+                //要再多declare x, y
+                int x = i; //[FAIL] - x = 0;
+                int y = j; //[FAIL] - y = 0;
+                while (x<matrix.length && y<matrix[0].length) {
+                    if (matrix[x++][y++] != val) return false;
+                }
+            }
+        }
+        return true;
+    }
+    public boolean isToeplitzMatrix1(int[][] matrix) {
         for(int i=0; i<matrix.length-1; i++){
             for(int j=0; j<matrix[0].length-1; j++){
                 if(matrix[i][j]!=matrix[i+1][j+1]) return false;
