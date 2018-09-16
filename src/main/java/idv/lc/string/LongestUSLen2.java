@@ -33,10 +33,11 @@ public class LongestUSLen2 {
                     //有點不靠譜，我怎麼知道e.getKey是不是另外一個不重複的e.getKey subsequence?
                     //或者說，只match false也可以，因為如果你是別人的subSeq, 你一定小於那個seq，所以我們只要檢查是不是在dup就好了
                     //But String len? 這沒排序啊？isSubSeq是假設前面string 長度大於後面string的欸
-                    // [2018/09/16] 
+                    // [2018/09/16]
                     // * 只看出現一次的string，是不是別人的subsequence, 這裡只看是不是重複string的subsequence, 暫時都不考慮長度
                     // * 如果某string x, 是 string y的subsequence, x, y均不是重複，那在最後的find max, 還是會取y，所以不用煩惱這些string 是不是非重複的subsequence
                     // 這個邏輯跟I是一樣的，就算a是b的subsequence, longest uncommon subsequence還是b
+                    // 所以長度不太重要，只要a 不是 b的subsequnece, 就可以了, 即使反過來 重複字串是a 的sub也沒關係
                     if (!inner.getValue() && isSubSeq(inner.getKey(), e.getKey())) {
                         e.setValue(false);
                         break;
