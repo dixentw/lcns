@@ -14,19 +14,23 @@ class KDiffPair {
         int n = nums.length;
         Arrays.sort(nums);
         int cnt = 0;
-        for (int i=0, j=1; i<n&&j<n; j = Math.max(i+1, j)) { // 處理dup時會造成i ==j, 這時候需要強迫+1
+        for (int i=0, j=1; i<n&&j<n;) {
+            // 處理dup時會造成i ==j, 這時候需要強迫+1, like [1,1,3,4,5], k=0
             if (nums[j] - nums[i] == k) {
                 cnt++;
                 while(j<n-1&&nums[j+1]==nums[j]) j++;
                 j++;
-                while(i<n-1&&nums[i+1]==nums[i]) i++;
-                i++;
+                //可以不用在這邊處理i++, 下次等他追上來就好
+                //while(i<n-1&&nums[i+1]==nums[i]) i++;
+                //i++;
             } else if (nums[j] - nums[i] < k) {
                 while(j<n-1&&nums[j+1]==nums[j]) j++;
                 j++;
             } else {
                 while(i<n-1&&nums[i+1]==nums[i]) i++;
                 i++;
+                //在這邊的時候確保j>i
+                j = i+1;
             }
         }
         return cnt;
