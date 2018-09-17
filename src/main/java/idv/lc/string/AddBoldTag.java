@@ -22,7 +22,6 @@ public class AddBoldTag {
             bold[i] = end > i;
         }
         StringBuilder sb = new StringBuilder();
-        System.out.println(Arrays.toString(bold));
         for (int i=0; i<s.length(); i++) {
             if (!bold[i]) {
                 sb.append(s.charAt(i));
