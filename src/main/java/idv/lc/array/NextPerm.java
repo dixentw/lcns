@@ -20,7 +20,7 @@ class NextPerm {
             Arrays.sort(nums);
             return;
         }
-        // 再找一個比pivot-1小的number
+        // 再找一個比pivot-1大的number
         for (int i=nums.length-1; i>=pivot; i--) {
             if (nums[i] > nums[pivot-1]) {
                 int tmp = nums[i];
