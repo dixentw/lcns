@@ -5,6 +5,22 @@ import java.util.*;
 class PascalTriangle {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();
+        for (int i=0; i<numRows; i++) {
+            List<Integer> row = new ArrayList<>();
+            for (int j=0; j<=i; j++) { //這裏j要以i為依歸，不是numOfRows
+                if (j==0 || j==i) {
+                    row.add(1);
+                } else {
+                    row.add(res.get(i-1).get(j-1) + res.get(i-1).get(j));
+                }
+            }
+            res.add(row);
+        }
+        return res;
+    }
+
+    public List<List<Integer>> generateOld(int numRows) {
+        List<List<Integer>> res = new ArrayList<>();
         if(numRows == 0){
             return res;
         }
