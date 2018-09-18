@@ -3,6 +3,9 @@ package idv.lc.string;
 import java.util.*;
 
 class RobotGo {
+    /*
+     * judge if this robot and move to origin
+     */
     public boolean judgeCircle(String moves) {
         int x = 0;
         int y = 0;
