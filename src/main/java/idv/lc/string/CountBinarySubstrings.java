@@ -24,7 +24,7 @@ public class CountBinarySubstrings {
             int end = i+1;
             int elmCnt = 1;
             boolean flip = false;
-            while (end<s.length() && !s.charAt(end) ==) {
+            while (end<s.length()) {
                 if (s.charAt(end)!=s.charAt(end-1)) {
                     flip = true;
                     elmCnt--;
