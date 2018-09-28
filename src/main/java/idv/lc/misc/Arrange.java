@@ -5,7 +5,6 @@ import java.util.*;
 public class Arrange {
     public int getMinArrange(int m, int n, int people) {
         int[][] seats = new int[m][n];
-        List<Integer[]> so = new ArrayList<>();
         for (int i=0; i<m; i++) {
             for (int j=0; j<n; j++) {
                 int total = 4;
@@ -14,7 +13,6 @@ public class Arrange {
                 if (j-1 < 0) total--;
                 if (j+1 >= n) total--;
                 seats[i][j] = total;
-                so.add(new Integer[]{total, i, j});
             }
         }
         for (int i=0; i<m*n-people; i++) { //要拿掉的部分
@@ -35,6 +33,10 @@ public class Arrange {
             if (mX+1 < m && seats[mX+1][mY]>0) seats[mX+1][mY]--;
             if (mY-1 >=0 && seats[mX][mY-1]>0) seats[mX][mY-1]--;
             if (mY+1 < n && seats[mX][mY+1]>0) seats[mX][mY+1]--;
+            for (int[] line : seats) {
+                System.out.println(Arrays.toString(line));
+            }
+            System.out.println("------------------------------");
         }
         int sum = 0;
         for (int i=0; i<m; i++) {
