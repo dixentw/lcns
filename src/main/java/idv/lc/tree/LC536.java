@@ -1,23 +1,8 @@
-## 536. Construct Binary Tree from String
+package idv.lc.tree;
 
->Example:
-Input: "4(2(3)(1))(6(5))"
-Output: return the tree root node representing the following tree:
- ​      4
- ​    /   \
-    2     6
-   / \   / 
-  3   1 5   
+import java.util.*;
 
----
-1. get number, this is root. then find left child's parethesis and right childs parethesis with stack.
-
-[FAIL]
-
-1. didn't consider the negative number 
-   1. can use first `(`, parse every character before `(`
-
-```java
+public class LC536 {
     public TreeNode str2tree(String s) {
         TreeNode root = null;
         if (s.length() == 0) return root;
@@ -53,6 +38,4 @@ Output: return the tree root node representing the following tree:
         root.right = str2tree(s.substring(rcs+1, i-1));
         return root;
     }
-
-```
-
+}
