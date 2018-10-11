@@ -8,9 +8,9 @@ public class LC270 {
         TreeNode next = target < a ? root.left : root.right;
         if (next == null) return a;
         int b = closestValue(next, target);
-        int da = Math.abs(a - target);
-        int db = Math.abs(b - target);
-        return da > db ? a : b;
+        double da = Math.abs(a - target);
+        double db = Math.abs(b - target);
+        return da > db ? b : a;
     }
     public int closestValueOld(TreeNode root, double target) {
         double[] diff = new double[1];
