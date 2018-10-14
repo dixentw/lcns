@@ -14,10 +14,10 @@ public class LC437 {
         if (node == null) return 0;
         currSum += node.val;
         int res = preSum.getOrDefault(currSum - target, 0);
-        preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1);
+        preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1); // save current sum to this map
         res += helperPreSum(node.left, currSum, target, preSum) + helperPreSum(node.right, currSum, target, preSum);
         // remove current, since we going back.
-        preSum.put(currSum, preSum.get(currSum) - 1);
+        preSum.put(currSum, preSum.get(currSum) - 1); //remove current sum to map since we only have one map.
         return res;
     }
 
