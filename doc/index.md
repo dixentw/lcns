@@ -284,6 +284,6 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||[671.SecondMinimumNodeInaBinaryTree](https://github.com/dixentw/lcns/blob/master/doc/671.%20Second%20Minimum%20Node%20In%20a%20Binary%20Tree.md)|||
 |2018/10/26|684. Redundant Connection|O||
 ||687. Longest Univalue Path|O||
-||700. Search in a Binary Search Tree|||
-|||||
+||700. Search in a Binary Search Tree|G||
+||701. Insert into a Binary Search Tree|G||
 |||||
