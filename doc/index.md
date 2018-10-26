@@ -283,7 +283,7 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||[669.TrimaBinarySearchTree](https://github.com/dixentw/lcns/blob/master/doc/669.%20Trim%20a%20Binary%20Search%20Tree.md)|||
 ||[671.SecondMinimumNodeInaBinaryTree](https://github.com/dixentw/lcns/blob/master/doc/671.%20Second%20Minimum%20Node%20In%20a%20Binary%20Tree.md)|||
 |2018/10/26|684. Redundant Connection|O||
-|||||
+||687. Longest Univalue Path|O||
 |||||
 |||||
 |||||
