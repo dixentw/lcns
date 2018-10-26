@@ -13,8 +13,8 @@ public class LC669 {
     }
     public TreeNode trimBSTRevised(TreeNode root, int L, int R) {
         if (root == null) return root;
-        TreeNode left = helper(root.left, L, R);
-        TreeNode right = helper(root.right, L, R);
+        TreeNode left = trimBSTRevised(root.left, L, R);
+        TreeNode right = trimBSTRevised(root.right, L, R);
         if (root.val < L) {
             return right;
         }

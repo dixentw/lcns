@@ -279,6 +279,11 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||[655.PrintBinaryTree](https://github.com/dixentw/lcns/blob/master/doc/655.%20Print%20Binary%20Tree.md)|||
 ||[662.MaximumWidthofBinaryTree](https://github.com/dixentw/lcns/blob/master/doc/662.%20Maximum%20Width%20of%20Binary%20Tree.md)|||
 ||[663.EqualTreePartition](https://github.com/dixentw/lcns/blob/master/doc/663.%20Equal%20Tree%20Partition.md)|||
-||[666.PathSumIV](https://github.com/dixentw/lcns/blob/master/doc/666.%20Path%20Sum%20IV.md)|||
+|2018/10/24|[666.PathSumIV](https://github.com/dixentw/lcns/blob/master/doc/666.%20Path%20Sum%20IV.md)|||
 ||[669.TrimaBinarySearchTree](https://github.com/dixentw/lcns/blob/master/doc/669.%20Trim%20a%20Binary%20Search%20Tree.md)|||
 ||[671.SecondMinimumNodeInaBinaryTree](https://github.com/dixentw/lcns/blob/master/doc/671.%20Second%20Minimum%20Node%20In%20a%20Binary%20Tree.md)|||
+|2018/10/26|684. Redundant Connection|O||
+|||||
+|||||
+|||||
+|||||
