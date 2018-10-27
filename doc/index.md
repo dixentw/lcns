@@ -288,3 +288,7 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||701. Insert into a Binary Search Tree|G||
 |2018/10/27|131. Palindrome Partitioning|O||
 ||742. Closest Leaf in a Binary Tree|O||
+||814. Binary Tree Pruning|Y||
+|||||
+|||||
+|||||
