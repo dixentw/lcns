@@ -83,7 +83,7 @@ Green, Yellow, Orange, Red -> mapping of google doc
 |2018/8/26|122.BestTimetoBuyandSellStockII|||
 ||119.Pascal'sTriangleII|||
 ||167.TwoSumII-Inputarrayissorted|||
-||216.CombinationSumIII|||
+||[216.CombinationSumIII](https://github.com/dixentw/lcns/blob/master/doc/216.%20Combination%20Sum%20III.md)|O||
 |2018/08/30|120.Triangle|||
 ||268.MissingNumber|||
 ||289.GameofLife|||
@@ -286,4 +286,4 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||687. Longest Univalue Path|O||
 ||700. Search in a Binary Search Tree|G||
 ||701. Insert into a Binary Search Tree|G||
-|||||
+|2018/10/27|131. Palindrome Partitioning|||
