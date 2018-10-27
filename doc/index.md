@@ -286,4 +286,5 @@ Green, Yellow, Orange, Red -> mapping of google doc
 ||687. Longest Univalue Path|O||
 ||700. Search in a Binary Search Tree|G||
 ||701. Insert into a Binary Search Tree|G||
-|2018/10/27|131. Palindrome Partitioning|||
+|2018/10/27|131. Palindrome Partitioning|O||
+||742. Closest Leaf in a Binary Tree|O||
