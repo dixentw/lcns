@@ -17,7 +17,6 @@ public class LC863 {
             int n = q.size();
             for (int i=0; i<n; i++) {
                 TreeNode curr = q.poll();
-                System.out.println(curr.val);
                 if (curr.left!=null && visited.add(curr.left)) q.offer(curr.left);
                 if (curr.right!=null && visited.add(curr.right)) q.offer(curr.right);
                 if (path.containsKey(curr) && visited.add(path.get(curr))) {
