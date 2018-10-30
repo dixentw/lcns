@@ -10,9 +10,9 @@ public class LC894 {
             return res;
         }
         if (N<1 || N%2==0) return res;
-        for (int i=1; i<n; i+=2) {
+        for (int i=1; i<N; i+=2) {
             List<TreeNode> left = allPossibleFBT(i);
-            List<TreeNode> right = allPossibleFBT(n-i-1);
+            List<TreeNode> right = allPossibleFBT(N-i-1);
             for (TreeNode l : left) {
                 for (TreeNode r : right) {
                     TreeNode root = new TreeNode(0);
