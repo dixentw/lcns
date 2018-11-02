@@ -23,7 +23,6 @@ public class LC166 {
             num *= 10;
             sb.append(num/denum);
             num %= denum;
-            System.out.println(num);
             if (table.containsKey(num)) {
                 int index = table.get(num);
                 sb.insert(index, "(");
