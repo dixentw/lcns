@@ -12,4 +12,10 @@ public class Calculator2Test {
         assertEquals(1, s.calculate(" 3/2 "));
         assertEquals(5, s.calculate(" 3+5 / 2 "));
     }
+    @Test
+    public void test2(){
+        assertEquals(7, s.calculateClassic("3+2*2"));
+        assertEquals(1, s.calculateClassic(" 3/2 "));
+        assertEquals(5, s.calculateClassic(" 3+5 / 2 "));
+    }
 }
