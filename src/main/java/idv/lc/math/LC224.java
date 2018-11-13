@@ -7,7 +7,6 @@ public class LC224 {
         Stack<Integer> eval = new Stack<>();
         List<String> postfix = in2postfix(toStrList(s));
         for (String token : postfix) {
-            System.out.println(token);
             if (!token.matches("[0-9]+")) {
                 int v1 = eval.pop();
                 int v2 = eval.pop();
