@@ -27,9 +27,11 @@ public class LC273 {
         if (num < 20) {
             return LESS_THAN_20[num];
         } else if (num < 100) {
-            return TENS[num/10] + " " + helper(num %10);
+            String last = helper(num % 10);
+            return (last == "") ? TENS[num/10] : TENS[num/10] + " " + last;
         } else {
-            return LESS_THAN_20[num/100] + " Hundred " + helper(num%100);
+            String last = helper(num % 100);
+            return (last == "") ? LESS_THAN_20[num/100] + " Hundred" : LESS_THAN_20[num/100] + " Hundred " + last;
         }
     }
 }

@@ -11,5 +11,6 @@ public class LC273Test {
        assertEquals("One Hundred Twenty Three", s.numberToWords(123)) ;
        assertEquals("Twenty", s.numberToWords(20)) ;
        assertEquals("Twelve Thousand Three Hundred Forty Five", s.numberToWords(12345)) ;
+       assertEquals("Fifty Thousand", s.numberToWords(50000)) ;
     }
 }
