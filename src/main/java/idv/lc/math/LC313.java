@@ -25,10 +25,7 @@ public class LC313 {
                     factors[j] = primes[j] * ugly[++indexes[j]];
                 }
             }
-            System.out.println(Arrays.toString(factors));
-            System.out.println(Arrays.toString(indexes));
         }
-        System.out.println(Arrays.toString(ugly));
         return ugly[n];
     }
 }
