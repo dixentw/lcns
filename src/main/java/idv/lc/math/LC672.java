@@ -11,5 +11,6 @@ public class LC672 {
         if (m==1) return 4;
         if (m==2) return 7;
         if (m==3) return 8;
+        return 0;
     }
 }
