@@ -11,9 +11,9 @@ public class LC367 {
             if (mid*mid == num) {
                 return true;
             } else if (mid*mid > num) {
-                end = mid-1;
+                end = (int) mid-1;
             } else {
-                start = mid+1;
+                start = (int) mid+1;
             }
         }
         return false;
