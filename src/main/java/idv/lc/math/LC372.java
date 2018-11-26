@@ -7,7 +7,6 @@ public class LC372 {
         if (b.length==0) return 1;
         int lastDigit = b[b.length-1];
         int[] nb = Arrays.copyOfRange(b, 0, b.length-1);
-        System.out.println(Arrays.toString(nb));
         return powMod(superPow(a, nb), 10, 1337) * powMod(a, lastDigit, 1337) % 1337;
 
     }
