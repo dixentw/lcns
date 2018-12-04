@@ -25,6 +25,6 @@ public class LC234Test {
         ListNode l = new ListNode(1);
         l.next = new ListNode(0);
         l.next.next = new ListNode(2);
-        assertTrue(s.isPalindrome(l));
+        assertFalse(s.isPalindrome(l));
     }
 }
