@@ -13,11 +13,6 @@ public class LC147Test {
         head.next.next = new ListNode(1);
         head.next.next.next = new ListNode(3);
         ListNode res = s.insertionSortList(head);
-        System.out.printf("%d->%d->%d->%d\n",
-                res.val,
-                res.next.val,
-                res.next.next.val,
-                res.next.next.next.val);
         assertEquals(1, res.val);
         assertEquals(2, res.next.val);
         assertEquals(3, res.next.next.val);
