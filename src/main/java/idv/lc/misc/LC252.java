@@ -1,28 +1,15 @@
-## 252. Meeting Rooms
+package idv.lc.misc;
 
-Given an array of meeting time intervals consisting of start and end times `[[s1,e1],[s2,e2],...]` (si < ei), determine if a person could attend all meetings.
+import java.util.*;
 
-**Example 1:**
+class Interval {
+    int start;
+    int end;
+    Interval() { start = 0; end = 0; }
+    Interval(int s, int e) { start = s; end = e; }
+}
 
-```
-Input: [[0,30],[5,10],[15,20]]
-Output: false
-```
-
-**Example 2:**
-
-```
-Input: [[7,10],[2,4]]
-Output: true
-```
-
----
-
-1. if there is no overlapped meeting then a person can attend all meetings. 
-2. sort the interval by start. Since the start is sorted, it only possible two interval are intersected, which is previous one end is larger then current one's start. we don't need to check more previous result.
-3. The only possibility is every section are not overlap, under assumption that start is sorted, check if there is an interval that start is smaller then other end is enough.
-
-```java
+public class LC252 {
     public boolean canAttendMeetings(Interval[] intervals) {
         Arrays.sort(intervals, (Interval a, Interval b) -> a.start-b.start);
         for (int i=1; i<intervals.length; i++) {
@@ -30,11 +17,6 @@ Output: true
         }
         return true;
     }
-```
-
-count the concurrent result.
-
-```java
     public boolean _canAttendMeetings(Interval[] intervals) {
         int[] start = new int[intervals.length];
         int[] end = new int[intervals.length];
@@ -55,5 +37,4 @@ count the concurrent result.
         }
         return cnt<2;
     }
-```
-
+}
