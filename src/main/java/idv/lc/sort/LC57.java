@@ -2,7 +2,7 @@ package idv.lc.sort;
 
 import java.util.*;
 
-public class Interval {
+class Interval {
     int start;
     int end;
     Interval() { start = 0; end = 0; }
@@ -14,7 +14,7 @@ public class LC57 {
         while (intervals.get(idx).end < newInterval.start) idx++;
         int start = newInterval.start;
         int end = newInterval.end;
-        while (idx < intervals.length && intervals.get(idx).start < newInterval.end) {
+        while (idx < intervals.size() && intervals.get(idx).start < newInterval.end) {
             start = Math.min(intervals.get(idx).start, start);
             end = Math.max(intervals.get(idx).end, end);
             intervals.remove(idx);
