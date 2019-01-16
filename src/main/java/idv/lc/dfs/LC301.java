@@ -26,14 +26,13 @@ public class LC301 {
             }
             return;
         }
-        System.out.println(path.toString());
         int curLen = path.length();
         if (s.charAt(i)=='(') {
-            remove(s, res, i+1, path.append('('), lc, rc, open+1);
             remove(s, res, i+1, path, lc-1, rc, open);
+            remove(s, res, i+1, path.append('('), lc, rc, open+1);
         } else if (s.charAt(i) ==')') {
-            remove(s, res, i+1, path.append(')'), lc, rc, open-1);
             remove(s, res, i+1, path, lc, rc-1, open);
+            remove(s, res, i+1, path.append(')'), lc, rc, open-1);
         } else {
             remove(s, res, i+1, path.append(s.charAt(i)), lc, rc, open);
         }

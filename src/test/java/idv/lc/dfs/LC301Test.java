@@ -9,8 +9,7 @@ public class LC301Test {
     @Test
     public void test1(){
         List<String> res = s.removeInvalidParentheses("()())()");
-        for (String fff : res) {
-            System.out.println(fff);
-        }
+        assertEquals("()()()", res.get(0));
+        assertEquals("(())()", res.get(1));
     }
 }
