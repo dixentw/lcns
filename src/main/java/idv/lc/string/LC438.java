@@ -38,6 +38,6 @@ public class LC438 {
         char[] cs = s.toCharArray();
         Arrays.sort(cs);
         String rune1 = new String(cs);
-        return t.equals(rune2);
+        return t.equals(rune1);
     }
 }
