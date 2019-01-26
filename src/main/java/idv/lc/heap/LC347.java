@@ -9,7 +9,7 @@ public class LC347 {
             map.put(i, map.getOrDefault(i, 0) + 1);
         }
         PriorityQueue<Map.Entry<Integer,Integer>> q = 
-            new PriorityQueue<>(k, (Map.Entry<Integer,Integer> a, Map.Entry<Integer,Integer> b) -> b.getValue() - a.getValue());
+            new PriorityQueue<>(k, (a, b) -> b.getValue() - a.getValue());
         for (Map.Entry<Integer, Integer> e : map.entrySet()) {
             q.offer(e);
         }
